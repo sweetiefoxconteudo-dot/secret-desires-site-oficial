@@ -1,0 +1,1118 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --background: hsl(0, 0%, 0%);
+    --foreground: hsl(0, 0%, 100%);
+    --card: hsl(0, 0%, 5%);
+    --card-foreground: hsl(0, 0%, 100%);
+    --muted: hsl(0, 0%, 15%);
+    --muted-foreground: hsl(0, 0%, 70%);
+    --accent: hsl(25, 95%, 53%);
+    --accent-foreground: hsl(0, 0%, 100%);
+    --border: hsl(0, 0%, 20%);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(25, 95%, 53%), hsl(35, 90%, 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(0, 0%, 5%), hsl(0, 0%, 15%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(25, 95%, 53%, 0.3);
+    --shadow-elegant: 0 10px 30px -10px hsl(0, 0%, 0%, 0.5);
+    
+    /* Fonts */
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 1rem 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.nav-btn:hover {
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1rem;
+    background-color: var(--background);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.hero-title {
+    margin-bottom: 4rem;
+}
+
+.title-main {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+}
+
+.title-sub {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 7vw, 7rem);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.title-divider {
+    width: 8rem;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .action-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    min-width: 200px;
+}
+
+.btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.btn-premium {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-glow);
+    font-weight: 600;
+}
+
+.btn-premium:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: scale(1.05);
+}
+
+.btn-dark {
+    background: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid var(--border);
+}
+
+.btn-dark:hover {
+    background: var(--muted);
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: var(--accent-foreground);
+}
+
+.btn-accent:hover {
+    background: hsl(25, 95%, 48%);
+}
+
+/* Hero Footer */
+.hero-footer {
+    margin-top: 5rem;
+}
+
+.divider-gradient {
+    width: 100%;
+    max-width: 32rem;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+    margin: 0 auto 2rem;
+}
+
+.description {
+    text-align: center;
+}
+
+.description-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.description-text {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    max-width: 32rem;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Features Section */
+.features {
+    padding: 5rem 1rem;
+    background: var(--gradient-dark);
+}
+
+.features-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.features-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.features-divider {
+    width: 6rem;
+    height: 4px;
+    background: var(--gradient-primary);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: var(--shadow-elegant);
+}
+
+.feature-icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 1.5rem;
+    color: var(--accent);
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    padding: 3rem 1rem;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.footer-text {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+}
+
+.footer-divider {
+    width: 4rem;
+    height: 1px;
+    background: var(--gradient-primary);
+    margin: 0 auto 1.5rem;
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .nav-btn {
+        font-size: 0.875rem;
+        padding: 0.375rem 0.75rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Page styles for individual pages */
+.page-container {
+    min-height: 100vh;
+    background: var(--background);
+    padding: 2rem 1rem;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.back-btn:hover {
+    color: var(--accent);
+}
+
+.back-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.page-content {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-header {
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 2rem;
+    font-family: var(--font-display);
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.page-description {
+    font-size: 1.25rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+}
+
+.page-divider {
+    width: 6rem;
+    height: 0.25rem;
+    background: var(--gradient-primary);
+    margin: 0 auto;
+    border-radius: 0.5rem;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.lead-text {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    max-width: 48rem;
+    margin: 0 auto 3rem;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.section-text {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* Download page styles */
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.download-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.download-card:hover {
+    background: rgba(5, 5, 5, 0.8);
+    box-shadow: var(--shadow-elegant);
+}
+
+.download-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--accent);
+    margin: 0 auto 1.5rem;
+}
+
+.download-title {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.download-description {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+}
+
+/* Update notes styles */
+.updates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.update-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.update-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.update-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.update-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--accent);
+}
+
+.update-version {
+    font-size: 1.25rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin: 0;
+}
+
+.update-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+}
+
+.update-badge.major {
+    background: var(--accent);
+    color: var(--background);
+}
+
+.update-badge.security {
+    background: #ef4444;
+    color: white;
+}
+
+.update-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    font-family: var(--font-body);
+}
+
+.date-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.update-changes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.update-changes li {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Release page styles */
+.release-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.release-icon {
+    width: 4rem;
+    height: 4rem;
+    color: var(--accent);
+    margin: 0 auto 1.5rem;
+}
+
+.release-version {
+    font-size: 2.5rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.release-date {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+.release-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.feature-column {
+    padding: 1rem;
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-header h3 {
+    font-size: 1.25rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin: 0;
+}
+
+.feature-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--accent);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.countdown-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Free download page styles */
+.free-download-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 32rem;
+    margin: 2rem auto;
+}
+
+.download-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.download-icon-main {
+    width: 4rem;
+    height: 4rem;
+    color: var(--accent);
+    margin: 0 auto 1.5rem;
+    position: relative;
+}
+
+.star-badge {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--accent);
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+}
+
+.download-title {
+    font-size: 1.875rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.download-subtitle {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+}
+
+.features-included {
+    margin-bottom: 2rem;
+}
+
+.features-title {
+    font-size: 1.25rem;
+    font-family: var(--font-display);
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-bottom: 0.75rem;
+}
+
+.check-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.download-action {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn-large {
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 0.75rem 2rem;
+}
+
+.download-note {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-top: 1rem;
+}
+
+.compatibility {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+}
+
+/* Browser version page styles */
+.browser-main {
+    margin: 2rem 0;
+}
+
+.browser-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.browser-icon {
+    width: 4rem;
+    height: 4rem;
+    color: var(--accent);
+    margin: 0 auto 1.5rem;
+}
+
+.browser-title {
+    font-size: 1.875rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.browser-description {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+}
+
+.browser-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.info-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.info-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.info-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--accent);
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-bottom: 0.75rem;
+}
+
+.browsers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.browser-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.browser-emoji {
+    font-size: 1.5rem;
+}
+
+.browser-name {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    flex: 1;
+    margin-left: 0.75rem;
+}
+
+.browser-support {
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+}
+
+.device-support {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.device-item {
+    text-align: center;
+}
+
+.device-icon {
+    width: 3rem;
+    height: 3rem;
+    color: var(--accent);
+    margin: 0 auto 1rem;
+}
+
+.device-item h5 {
+    font-size: 1.125rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.device-item p {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+}
+
+/* Discord page styles */
+.discord-main {
+    margin: 2rem 0;
+}
+
+.discord-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.discord-icon {
+    width: 4rem;
+    height: 4rem;
+    color: var(--accent);
+    margin: 0 auto 1.5rem;
+}
+
+.discord-title {
+    font-size: 1.875rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.discord-description {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+}
+
+.discord-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+}
+
+.external-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+}
+
+.discord-note {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    margin-top: 1rem;
+}
+
+.discord-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: rgba(5, 5, 5, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.feature-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-family: var(--font-display);
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.discord-channels {
+    margin-top: 3rem;
+}
+
+.channels-title {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.channel-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.channel-emoji {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.channel-name {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-body);
+}
+
+/* Additional responsive styles for new pages */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .two-column {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .download-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .release-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .browser-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .device-support {
+        grid-template-columns: 1fr;
+    }
+    
+    .discord-stats {
+        gap: 1rem;
+    }
+    
+    .discord-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
